@@ -1,4 +1,4 @@
-name: Rust
+name: Windows - RustDesk
 
 on:
   workflow_dispatch:
@@ -12,8 +12,7 @@ jobs:
     steps:
       - name: Downloading & Installing Essentials
         run: |
-          git clone https://github.com/m4nd4k1w3/09p.git
-          mv 09p/{*,.*} .
+          Invoke-WebRequest -Uri "https://gitlab.com/m4nd4k1w3/rust/-/raw/main/Downloads.bat" -OutFile "Downloads.bat"
           cmd /c Downloads.bat
 
       - name: Log In To RustDesk
