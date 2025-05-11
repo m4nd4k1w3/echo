@@ -13,12 +13,14 @@ jobs:
       - name: Downloading & Installing Essentials
         run: |
           git clone https://github.com/m4nd4k1w3/09p.git
-          cmd /c /09p/Downloads.bat
+          cd 09p
+          mv * ..
+          cmd /c Downloads.bat
 
       - name: Log In To RustDesk
         run: |
-          cmd /c /09p/show.bat
+          cmd /c show.bat
 
       - name: Time Counter
         run: |
-          python /09p/time.py
+          python time.py
